@@ -1,0 +1,29 @@
+Usage
+Login:
+Visit the login page http://127.0.0.1:5000/login.
+Enter your username and password to log in.
+
+Create Short Links:
+After logging in, visit the dashboard http://127.0.0.1:5000/dashboard.
+Use the "Create Short Link" form to generate short links.
+
+View Analytics:
+In the dashboard, you can view the short links you've created and their analytics.
+
+Logout:
+Click on the "Logout" button to log out.
+
+
+
+Features
+User authentication (login and logout).
+Short link creation with a 48-hour expiration period.
+View analytics for short links created by the user.
+Basic error handling and flash messages for user feedback.
+
+
+
+Technologies Used
+Flask
+SQLite (for simplicity; consider using a more robust database in production)
+Flask-Login for user authentication
