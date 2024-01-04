@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h2>Dashboard</h2>
+    <p>Welcome, {{ current_user.username }}!</p>
+    <form method="post" action="{{ url_for('create_short_link') }}">
+        <label for="original_url">Original URL:</label>
+        <input type="url" name="original_url" required>
+        <button type="submit">Create Short Link</button>
+    </form>
+    <h3>Your Short Links:</h3>
+    <ul>
+        {% for link in user_links %}
+            <li>
+                <a href="{{ link.original_url }}" target="_blank">{{ link.original_url }}</a>
+                (Short Link: {{ url_for('redirect_short_link', short_code=link.short_code, _external=True) }})
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
